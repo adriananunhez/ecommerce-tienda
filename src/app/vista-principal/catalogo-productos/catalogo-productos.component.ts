@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataService } from '../../services/data.service';
 import { Router } from "@angular/router";
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'catalogo-productos',
@@ -20,16 +21,17 @@ export class CatalogoProductosComponent implements OnInit {
 
   getProductos(){
     this.dataService.getProducts().then((data)=>{
+      console.log("estoy en catalogo-productos")
       this.productos = data["products"];
     });
   }
 
-  getProducto(){
+  /*getProducto(){
     this.dataService.getProducts().then((data)=>{
        this.productos = data["products"];
       console.log(this.productos)
     });
-  }
+  }*/
 
 
 }

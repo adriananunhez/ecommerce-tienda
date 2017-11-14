@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @Component({
   selector: 'app-root',

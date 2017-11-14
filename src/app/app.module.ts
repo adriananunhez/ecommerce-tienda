@@ -5,14 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HttpService } from  './http.service';
-import { LogService } from './log.service';
+import { HttpService } from  './services/http.service';
+import { LogService } from './services/log.service';
+import { DataService } from './services/data.service';
+import { ProductosService } from './services/productos.service';
+
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
 import { BarraNavegacionComponent } from './vista-principal/barra-navegacion/barra-navegacion.component';
 import { CatalogoProductosComponent } from './vista-principal/catalogo-productos/catalogo-productos.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ProductoComponent } from './vista-principal/producto/producto.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { ProductoComponent } from './vista-principal/producto/producto.component
     VistaPrincipalComponent,
     BarraNavegacionComponent,
     CatalogoProductosComponent,
-    ProductoComponent
+    ProductoComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import { ProductoComponent } from './vista-principal/producto/producto.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [LogService, HttpService],
+  providers: [LogService, HttpService, DataService, ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

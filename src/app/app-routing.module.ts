@@ -7,7 +7,7 @@ import { ProductoComponent } from './vista-principal/producto/producto.component
 const routes: Routes = [
    {path: '', component: LoginComponent},
    {path: 'vista-principal', component: VistaPrincipalComponent},
-   { path: 'producto/:id', component: ProductoComponent }
+   {path: 'producto/:id', component: ProductoComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -15,3 +15,5 @@ const routes: Routes = [
   providers: []
 })
 export class AppRoutingModule { }
+
+export const app_routing = RouterModule.forRoot(routes, {useHash:true});

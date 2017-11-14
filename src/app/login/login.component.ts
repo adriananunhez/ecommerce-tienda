@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LogService } from '../log.service';
-import { DataService } from '../data.service';
+import { LogService } from '../services/log.service';
+import { DataService } from '../services/data.service';
 import { Router } from '@angular/router';
 // import { Formm } from '@angular/core';
 
