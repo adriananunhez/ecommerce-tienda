@@ -17,6 +17,7 @@ import { CatalogoProductosComponent } from './vista-principal/catalogo-productos
 import { AppRoutingModule } from './app-routing.module';
 import { ProductoComponent } from './vista-principal/producto/producto.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { CarritoComprasComponent } from './vista-principal/carrito-compras/carrito-compras.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SearchFilterPipe } from './search-filter.pipe';
     BarraNavegacionComponent,
     CatalogoProductosComponent,
     ProductoComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    CarritoComprasComponent
   ],
   imports: [
     BrowserModule,

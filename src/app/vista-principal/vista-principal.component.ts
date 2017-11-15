@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
+import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 
 @Component({
   selector: 'vista-principal',
@@ -9,6 +11,7 @@ import { DataService } from '../services/data.service';
 
 export class VistaPrincipalComponent  {
 
-  constructor(public dataService:DataService) { }
-
+  constructor(public dataService:DataService, public router:Router) {
+      // this.router.navigate(['/catalogo-productos']);
+  }
 }

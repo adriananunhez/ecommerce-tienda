@@ -11,6 +11,8 @@ import { NgModule } from '@angular/core';
 })
 export class CatalogoProductosComponent implements OnInit {
   private productos:any = [];
+  private cantidadProductos:any = '';
+
   constructor(private dataService: DataService,
               public router:Router) {
     this.getProductos();
@@ -21,9 +23,13 @@ export class CatalogoProductosComponent implements OnInit {
 
   getProductos(){
     this.dataService.getProducts().then((data)=>{
-      console.log("estoy en catalogo-productos")
       this.productos = data["products"];
     });
+  }
+
+  agregarCarrito(){
+    this.cantidadProductos = document.getElementById('badge').textContent;
+    document.getElementById("badge").innerHTML  = String(Number(this.cantidadProductos) + 1);
   }
 
   /*getProducto(){

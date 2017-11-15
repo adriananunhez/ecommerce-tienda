@@ -4,8 +4,9 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class ProductosService {
+  constructor(public http:Http) {
 
-  constructor(public http:Http) { }
+  }
 
   getProducto( cod:string ){
     return this.http.get(`https://examen-bd.firebaseio.com/productos/${ cod }.json`);
