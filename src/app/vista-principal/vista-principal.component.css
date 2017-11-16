@@ -1,0 +1,8 @@
+.body{
+  background-color: white;
+  padding: 2% !important;
+  margin-top: 2%;
+  border-radius: 1%;
+  height: 600px !important;
+  overflow: hidden;
+}

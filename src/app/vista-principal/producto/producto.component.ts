@@ -13,6 +13,7 @@ export class ProductoComponent{
 
   constructor(private route:ActivatedRoute,
               private productService:ProductosService) {
+
       route.params.subscribe( parametros => {
         productService.getProducto( parametros['id'])
         .subscribe( res => {
@@ -21,15 +22,5 @@ export class ProductoComponent{
         })
       })
   }
-
-
-
-  /*route.params.subscribe( parametros => {
-      _ps.cargar_producto( parametros['id'] )
-      .subscribe( res => {
-            this.cod = parametros['id'];
-            this.producto = res.json();
-          })
-  })*/
 
 }

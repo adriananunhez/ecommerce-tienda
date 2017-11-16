@@ -9,12 +9,11 @@ import { CatalogoProductosComponent } from './vista-principal/catalogo-productos
 const routes: Routes = [
    {path: '', component: LoginComponent},
    {path: 'vista-principal', component: VistaPrincipalComponent, children: [
-     {path: '', component: CatalogoProductosComponent},
-     {path: 'carrito-compras', component: CarritoComprasComponent}
-   ]},
-   {path: 'producto/:id', component: ProductoComponent}
-
-
+     {path: '', redirectTo: 'catalogo-productos', pathMatch: 'full'},
+     {path: 'catalogo-productos', component: CatalogoProductosComponent},
+     {path: 'carrito-compras', component: CarritoComprasComponent},
+     {path: 'producto/:id', component: ProductoComponent}
+   ]}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
