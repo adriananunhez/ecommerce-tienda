@@ -26,28 +26,33 @@ export class CatalogoProductosComponent implements OnInit {
   ngOnInit() {
   }
 
+
+
+// Se obtienen todos los productos del service
   getProductos(){
     this.dataService.getProducts().then((data)=>{
       this.productos = data["products"];
     });
   }
 
+
+
+// Productos agregados al carrito
   agregarCarrito(producto, cantidad){
 
     // Se muestra la cantidad de productos anhadidos sobre el icon del carrito
     this.cantidadProductos = document.getElementById('badge').textContent;
     document.getElementById("badge").innerHTML  = String(Number(this.cantidadProductos) + 1);
 
-    // se envia al servicio los productos anhadidos
+    // se envia al servicio los productos anhadidos, se calcula subtotal
     this.subtotal = producto.precio * cantidad;
-    this.unidadDisponible = producto.unidadDisponible - cantidad;
-    document.getElementById("unidadDisponible").innerHTML = String(Number(this.unidadDisponible));
+    this.unidadDisponible = producto.unidad_disponible - cantidad;
+    document.getElementById("unidadDisponible-"+producto.cod).innerHTML = String(Number(this.unidadDisponible));
 
     this.productoJSON = {
       producto : producto,
       cantidad : cantidad,
-      subtotal : this.subtotal,
-      unidadDisponible : this.unidadDisponible
+      subtotal : this.subtotal
     }
 
     this.productService.cargarCarrito(this.productoJSON);

@@ -27,17 +27,18 @@ export class ProductosService {
   }
 
   actualizarProducto(productosCarritoJSON){
-    console.log(productosCarritoJSON.length);
+
     for(let i=0; i<productosCarritoJSON.length; i++){
       let cod = productosCarritoJSON[i].producto.cod;
-      console.log("codigo: "+cod)
-      let unidadDisponible = productosCarritoJSON[i].unidadDisponible;
+      let unidadDisponible = productosCarritoJSON[i].producto.unidad_disponible - productosCarritoJSON[i].cantidad;
       let data = {
         unidad_disponible : unidadDisponible
       }
 
       this.http.patch(`https://examen-bd.firebaseio.com/productos/${ cod }.json`,JSON.stringify(data)).subscribe(()=>{
           this.productosCarritoArray = [];
+          this.totalCarrito = 0;
+          document.getElementById("badge").innerHTML  = '';
           this.router.navigate(['/vista-principal'])
       });
     }

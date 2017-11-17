@@ -7,7 +7,6 @@
 }
 
 .div-body{
-  /*height: 100%;*/
   width: 100vw;
   display: table-cell;
   vertical-align: middle;
@@ -19,4 +18,8 @@ input.ng-touched.ng-invalid{
 }
 .error{
     color: red;
+}
+
+.image-login{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/login-fondo.jpg');
 }

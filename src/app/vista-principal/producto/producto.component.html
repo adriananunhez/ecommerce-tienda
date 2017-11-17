@@ -1,14 +1,19 @@
-<div *ngIf="producto" class="card-producto">
-  <img class="card-img-top" [src]="producto.imagen" alt="Card image cap">
-  <div class="card-body">
+<div class="card-producto" *ngIf="producto" class="">
+
+  <div class="row">
+    <h2>{{producto.nombre}}</h2>
+  </div>
+
+  <div class="row">
     <span id="productId" class="hidden">{{producto.nombre}}</span>
-    <h4 class="card-title">{{producto.nombre}}</h4>
-    <p class="card-text">Precio: {{producto.precio}}</p>
-    <p class="card-text">Unidades disponibles: {{producto.unidad_disponible}}</p>
-    <div class="card-buttons">
-      <a class="btn btn-primary"
-        routerLink="/vista-principal">Atras</a>
-      <input class="number text-center" type="number" name="" value="2">
+    <div class="col-sm-6 col-image">
+      <img class="productImg" [src]="producto.imagen" alt="Card image cap">
+      <a class="btn btn-default" routerLink="/vista-principal">Atras</a>
+    </div>
+    <div class="col-sm-6">
+      <p class=""><strong>Precio:</strong>{{producto.precio}}</p>
+      <p class=""><strong>Unidades disponibles:</strong>{{producto.unidad_disponible}}</p>
     </div>
   </div>
+
 </div>

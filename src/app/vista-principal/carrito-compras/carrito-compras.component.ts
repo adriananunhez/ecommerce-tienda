@@ -8,11 +8,15 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class CarritoComprasComponent {
   productosCarritoJSON:any;
+  
   constructor(public productService:ProductosService) {
 
+    //Se obtienen los productos que fueron agregados al carrito
     this.productosCarritoJSON = this.productService.obtenerCarrito();
+
   }
 
+  //Se invoca al servicio para la actualizacion stock de los productos
   actualizarProducto(productosCarritoJSON){
     this.productService.actualizarProducto(productosCarritoJSON);
   }

@@ -2,23 +2,24 @@
   <div>
     <h2>Carrito de compras</h2>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="productosCarritoJSON.length > 0">
     <div class="col-sm-6">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let carrito of productosCarritoJSON">
-            <div class="">
-              <img class="card-img-top" [src]="carrito.producto.imagen" alt="Card image cap" width="10%">
-              <p>{{carrito.producto.nombre}}</p>
-              <p><strong>Unidades: </strong>{{carrito.cantidad}}</p>
+            <div class="productDetails">
+              <img class="card-img-top" [src]="carrito.producto.imagen" alt="Card image cap" width="10%" height="10%">
+              <div class="productText">
+                <p>{{carrito.producto.nombre}}</p>
+                <p><strong>Unidades: </strong>{{carrito.cantidad}}</p>
+              </div>
             </div>
             <p><strong>Subtotal: </strong>{{carrito.subtotal}}$</p>
-
         </li>
       </ul>
     </div>
     <div class="col-sm-6">
-      {{productService.totalCarrito}}
-      <a href="#" class="btn">Cancelar</a>
-      <a class="btn" (click)="actualizarProducto(productosCarritoJSON)">Guardar</a>
+      <h2>Total: {{productService.totalCarrito}} $</h2>
+      <a type="button" class="btn btn-default" routerLink="/vista-principal">Cancelar</a>
+      <a type="button" class="btn btn-default" (click)="actualizarProducto(productosCarritoJSON)">Pagar</a>
     </div>
-  </div>
+</div>

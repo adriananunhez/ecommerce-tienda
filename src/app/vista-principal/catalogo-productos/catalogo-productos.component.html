@@ -18,7 +18,7 @@
           <span id="productId" class="hidden">{{producto.nombre}}</span>
           <h4 class="card-title">{{producto.nombre}}</h4>
           <p class="card-text"><strong>Precio:</strong>{{producto.precio}}</p>
-          <p id="unidadDisponible" class="card-text"><strong>Unidades disponibles:</strong>{{producto.unidad_disponible}}</p>
+          <p class="card-text"><strong>Unidades disponibles:</strong><span id="unidadDisponible-{{producto.cod}}">{{producto.unidad_disponible}}</span></p>
           <div class="card-buttons">
             <a href="#" class="btn btn-primary" [routerLink]="['../producto', producto.cod ]">Ver mas</a>
             <a class="btn btn-warning" (click)="agregarCarrito(producto, inputNumber.value)">Anadir</a>
